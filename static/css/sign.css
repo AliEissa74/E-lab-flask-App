@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; 
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s ease-out;
+  text-decoration: none;
+}
+
+html{
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+body{
+  color: #b8b8b8;
+  background-color: #e2e6ea;
+}
+
+form{
+  width: 450px;
+  height: 500px;
+  margin: 16rem auto;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  
+}
+h1{
+  margin-bottom: 40px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.input-field{
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 20px auto;
+  height: 55px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  font-size: 1.8rem;
+}
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+/* .inputs{
+  width: 70%;
+  padding: .5rem 1rem;
+  margin: 5px 60px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 700;
+} */
+
+/* .inputs:focus{
+  border: 2px solid var(--green);
+  background: rgba(255, 255, 255, 0.7);
+} */
+
+.submit {
+  text-align: center;
+}
+.btn{
+  width: 50%;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #fff;
+  border: 2px solid var(--green);
+  opacity: .9;
+  color: var(--green);
+  border-radius: 10px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: var(--green);
+  color: #fff;
+}
+
+p{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: initial;
+}
+
+p a{
+  text-decoration: none;
+  color: var(--green);
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+p a:hover{
+  color: var(--green);
+}
+
+
+/* =============================sign up============================== */
+.signup{
+  width: 500px;
+  height: 600px;
+  margin: 16rem auto;
+}
+
+
+@media (max-width: 870px) {
+  form {
+    min-height: 800px;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 570px) {
+  form {
+    width: 70%;
+    height: 300px;
+  }
+
+}
+

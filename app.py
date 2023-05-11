@@ -33,8 +33,8 @@ def diabete():
     return render_template("diagnoses/diabetes.html")
 
 #===============================register=========================
-@app.route("/register")
-def register():
+@app.route("/signup")
+def signup():
     return render_template("signup.html")
 
 #===============================login=========================

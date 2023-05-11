@@ -614,6 +614,195 @@ margin: 0 26rem;     /*for navbar titles align*/
 }
 
 
+/* 
+---------------------------------------------
+Blog
+--------------------------------------------- 
+*/
+
+.blog {
+    padding: 2rem 4%; /* here in %  left and right like container-fluid 9%*/
+    margin-bottom: 40px;
+}
+
+.blog:before {
+  content: '';
+  background-image: url(../image/blog-left-dec.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: -70px;
+  width: 975px;
+  height: 1020px;
+  z-index: -1;
+}
+
+.blog {
+  position: relative;
+}
+
+.blog .section-heading {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.blog .section-heading .line-dec {
+  margin: 0 auto;
+}
+
+.show-up {
+  position: relative;
+  z-index: 200;
+}
+
+.blog-post {
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  border-radius: 25px;
+}
+
+.blog-post .thumb img {
+  border-top-right-radius: 23px;
+  border-top-left-radius: 23px;
+  width: 100%;
+}
+
+.blog-post .down-content {
+  border-bottom-right-radius: 23px;
+  border-bottom-left-radius: 23px;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.blog-post .down-content span.category {
+  font-size: 15px;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: var(--green);
+  border-radius: 18px;
+  display: inline-block;
+}
+.blog a{
+  text-decoration: none;
+}
+.blog a:hover{
+  text-decoration: underline;
+  color: var(--green);
+}
+
+.blog-post .down-content span.date {
+  font-size: 15px;
+  color: #afafaf;
+  text-align: right;
+  float: right;
+  margin-top: 4px;
+}
+
+.blog-post .down-content h4 {
+  font-size:18px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.blog-post .down-content p {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: var(--light-color);
+}
+
+.blog-post .down-content span.author {
+  font-size: 15px;
+  color: #2a2a2a;
+}
+
+.blog-post .down-content span.author img {
+  max-width: 56px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.blog-post .down-content .border-first-button {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+}
+.blog-post .down-content .border-first-button a {
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid var(--green);
+  border-radius: 18px;
+  color: var(--green);
+}
+
+.blog-post .down-content .border-first-button a:hover{
+
+  background-color: var(--green);
+  color: #fff;
+}
+
+.blog-posts {
+  margin-left: 30px;
+}
+
+.post-item {
+  margin-bottom: 62px;
+}
+
+.last-post-item {
+  margin-bottom: 0px;
+}
+
+.post-item .thumb {
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+}
+
+.post-item .thumb img {
+  border-radius: 23px;
+  display: inline-block;
+}
+
+.post-item .right-content {
+  padding-top: 20px;
+}
+
+.post-item .right-content span.category {
+  font-size: 15px;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: var(--green);
+  border-radius: 18px;
+  display: inline-block;
+}
+
+.post-item .right-content span.date {
+  font-size: 15px;
+  color: #afafaf;
+  text-align: right;
+  float: right;
+  margin-top: 4px;
+}
+
+.post-item .right-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.post-item .right-content p {
+  color: var(--light-color);
+  font-size: 15px;
+}
+
+
 
 
 /*============================ articles section end ============================*/
@@ -770,6 +959,13 @@ margin: 0 26rem;     /*for navbar titles align*/
   .navbar-nav {
     margin: 0 auto;     /*for navbar titles align*/
     }
+    .blog-posts {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+    .post-item {
+      margin-bottom: 70px;
+    }
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media (max-width: 768px) {
@@ -785,6 +981,22 @@ margin: 0 26rem;     /*for navbar titles align*/
   }
   .navbar-nav {
     margin: 0 auto;     /*for navbar titles align*/
+    }
+    .blog-posts {
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+    .post-item {
+      margin-bottom: 30px;
+    }
+    .post-item .thumb img {
+      max-width: 140px;
+    }
+    .post-item .right-content p {
+      display: none;
+    }
+    .post-item .right-content h4 {
+      font-size: 15px;
     }
   /* .app .row {
     width: 70%;
