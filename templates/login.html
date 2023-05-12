@@ -22,11 +22,12 @@
         <!-- ================================ header section start================================ -->
         {% include "header.html" %}
         <!--================================  header section end ================================ -->
+
   <form action="" method="post">
     <h1>Login</h1>
       <div class="input-field">
         <i class="fas fa-user"></i>
-        <input type="text" name="name" id="name" class="inputs" placeholder="Username or Email" required>
+        <input type="email" name="email" id="email" class="inputs" placeholder="Email" required>
       </div>
 
       <div class="input-field">
@@ -34,7 +35,7 @@
         <input type="password" name="password" id="password" class="inputs" placeholder="Password" required>
       </div>
         <div class="submit">
-          <input type="submit" value="Login" class="btn">
+          <button type="submit" class="btn">Login</button>
         </div>
       <p>Don't have an account? <br> <a href="{{url_for('signup')}}">Sign Up</a></p>
   </form>

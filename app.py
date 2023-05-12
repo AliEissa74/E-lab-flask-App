@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template , request , flash
 
 app = Flask(__name__)
 
@@ -32,15 +32,19 @@ def skin():
 def diabete():
     return render_template("diagnoses/diabetes.html")
 
-#===============================register=========================
+
+#===============================authentication===========================================
+
+#===============================login=========================
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+#===============================signup=========================
 @app.route("/signup")
 def signup():
     return render_template("signup.html")
 
-#===============================login=========================
-@app.route("/signin")
-def signin():
-    return render_template("signin.html")
 
 if __name__ == "__main__":
     app.run()
