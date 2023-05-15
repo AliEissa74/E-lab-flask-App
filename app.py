@@ -1,8 +1,13 @@
 from flask import Flask, redirect, url_for, render_template , request , flash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
 
 app = Flask(__name__)
 
+#===============================./DATABASE CREATION========================
+
 #=================================home page========================
+@app.route("/home")
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -36,12 +41,12 @@ def diabete():
 #===============================authentication===========================================
 
 #===============================login=========================
-@app.route("/login")
+@app.route("/login" , methods=['GET', 'POST'])
 def login():
     return render_template("login.html")
 
 #===============================signup=========================
-@app.route("/signup")
+@app.route("/signup" , methods=['GET', 'POST'])
 def signup():
     return render_template("signup.html")
 
