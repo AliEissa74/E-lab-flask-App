@@ -483,6 +483,8 @@ margin: 0 26rem;     /*for navbar titles align*/
   background-color: rgb(5, 155, 169);
   padding: .6rem;
   margin-bottom: .7rem;
+  width: 38%;
+  height: 35px;
 }
 .doctors .box-container .card .card-body .btn:hover {
   opacity: .8;
@@ -999,6 +1001,9 @@ Blog
     }
     .post-item .right-content h4 {
       font-size: 15px;
+    }
+    .blog-post .down-content .border-first-button a {
+      display: none;
     }
   /* .app .row {
     width: 70%;

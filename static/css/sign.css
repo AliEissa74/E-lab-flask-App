@@ -135,9 +135,19 @@ p a:hover{
 .signup{
   width: 500px;
   height: 600px;
-  margin: 16rem auto;
+  /* margin: 13rem auto; */
 }
 
+.alert {
+  position: fixed;
+  top: 80px;
+  z-index: 11;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  font-size: 16px;
+  text-align: center;
+}
 
 /* media queries */
 
@@ -162,6 +172,16 @@ p a:hover{
   }
   .signup{
     width: 350px;
+  }
+  .alert {
+    position: fixed;
+    top: 50px;
+    z-index: 11;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    font-size: 16px;
+    text-align: center;
   }
 }
 
