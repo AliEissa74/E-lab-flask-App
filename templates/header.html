@@ -11,6 +11,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-lg-0">
+              {% if current_user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link nav-indicator" aria-current="page" href="{{ url_for('home') }}#home">Home</a>
               </li>
@@ -28,9 +29,31 @@
               </li>
             </ul>
             <ul class="pt-3">
-                <a  href="{{url_for('login')}}"><button class="log-btn">Login</button></a>
-                <a  href="{{url_for('signup')}}" class="reg-btn text-light">Sign Up</a>
+                <a  href="#"><button class="log-btn">{{ username }}</button></a>
+                <a  href="{{url_for('logout')}}" class="reg-btn text-light">Logout</a>
             </ul>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link nav-indicator" aria-current="page" href="{{ url_for('home') }}#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-indicator" href="{{ url_for('home') }}#services">services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-indicator" href="{{ url_for('home') }}#diagnose">diagnose</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-indicator" href="{{ url_for('home') }}#doctors">Doctors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-indicator" href="{{ url_for('home') }}#blog">Blog</a>
+            </li>
+          </ul>
+          <ul class="pt-3">
+              <a  href="{{url_for('login')}}"><button class="log-btn">Login</button></a>
+              <a  href="{{url_for('signup')}}" class="reg-btn text-light">Sign Up</a>
+          </ul>
+          {% endif %}
           </div>
         </div>
       </nav>

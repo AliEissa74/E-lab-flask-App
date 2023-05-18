@@ -1,9 +1,10 @@
 from flask import Flask, redirect, url_for, render_template , request , flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin,login_user,LoginManager,login_required
+from flask_login import UserMixin,login_user,LoginManager,login_required ,current_user,logout_user
 from email_validator import validate_email, EmailNotValidError
 from flask_bcrypt import Bcrypt
 from flask_bootstrap import Bootstrap
+from functools import wraps
 
 
 
@@ -21,8 +22,8 @@ Login_manager.login_view='login'
 
 
 @Login_manager.user_loader
-def Load_User(user_id):
-    return User.query.get(int(user_id))
+def Load_User(id):
+    return User.query.get(int(id))
 
 
 
@@ -37,37 +38,65 @@ class User(db.Model,UserMixin):
 with app.app_context():
     db.create_all()
 
+#===============================decorator=========================
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # Check if user is logged in
+        if not current_user.is_authenticated:
+            flash("Please login to access this page", "warning")
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 #=================================home page========================
 @app.route("/")
 def home():
-    return render_template("index.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("index.html" ,user=current_user ,username=username)
 
 #===================================brain tumor===========================
 @app.route("/brain-tumor")
+@login_required
 def brain():
-    return render_template("diagnoses/brain.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("diagnoses/brain.html",username=username)
 
 #===============================Chest x-ray=========================
 @app.route("/chest-x-ray")
+@login_required
 def chest():
-    return render_template("diagnoses/xray.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("diagnoses/xray.html",username=username)
 
 #===============================Breast cancer=========================
 @app.route("/breast-cancer")
+@login_required
 def breast():
-    return render_template("diagnoses/breast.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("diagnoses/breast.html",username=username)
 
 #===============================Skin cancer=========================
 @app.route("/skin-cancer")
+@login_required
 def skin():
-    return render_template("diagnoses/skin.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("diagnoses/skin.html",username=username)
 
 #===============================Diabetes=========================
 @app.route("/diabetes")
+@login_required
 def diabete():
-    return render_template("diagnoses/diabetes.html")
+    user = User.query.first()
+    username = user.username if user else None
+    return render_template("diagnoses/diabetes.html",username=username)
+
 
 
 #===============================authentication===========================================
@@ -90,19 +119,19 @@ def login():
         # Perform login action
         user = User.query.filter_by(email=email).first()
         if user is None:
-            flash('Invalid email or password',category="danger")
+            flash('Invalid email or password.',category="danger")
             return redirect(url_for('login'))
 
         # Check if password is correct
         if not bcrypt.check_password_hash(user.password, password):
-            flash('Invalid email or password',category="danger")
+            flash('Invalid email or password.',category="danger")
             return redirect(url_for('login'))
 
         # Login the user
-        login_user(user)
+        login_user(user, remember=True)
         return redirect(url_for('home'))
 
-    return render_template('login.html')
+    return render_template('login.html', user=current_user)
 
 #===============================signup=========================
 @app.route("/signup", methods=['POST', 'GET'])
@@ -129,7 +158,7 @@ def signup():
         # Check if email already exists in the database
         existing_email = User.query.filter_by(email=email).first()
         if existing_email:
-            flash("This email address is already registered. Please use a different email." ,"danger")
+            flash("This email address is already registered. Please use a different email" ,"danger")
             return redirect(url_for('signup'))
 
 
@@ -152,7 +181,14 @@ def signup():
         flash("Your account has been created successfully!","success")
         return redirect(url_for('login'))
 
-    return render_template("signup.html")
+    return render_template("signup.html" ,user=current_user)
+
+#===============================logout=========================
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 
 if __name__ == "__main__":
