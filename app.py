@@ -53,7 +53,7 @@ def login_required(f):
 #=================================home page========================
 @app.route("/")
 def home():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("index.html" ,user=current_user ,username=username)
 
@@ -61,7 +61,7 @@ def home():
 @app.route("/brain-tumor")
 @login_required
 def brain():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("diagnoses/brain.html",username=username)
 
@@ -69,7 +69,7 @@ def brain():
 @app.route("/chest-x-ray")
 @login_required
 def chest():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("diagnoses/xray.html",username=username)
 
@@ -77,7 +77,7 @@ def chest():
 @app.route("/breast-cancer")
 @login_required
 def breast():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("diagnoses/breast.html",username=username)
 
@@ -85,7 +85,7 @@ def breast():
 @app.route("/skin-cancer")
 @login_required
 def skin():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("diagnoses/skin.html",username=username)
 
@@ -93,7 +93,7 @@ def skin():
 @app.route("/diabetes")
 @login_required
 def diabete():
-    user = User.query.first()
+    user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     return render_template("diagnoses/diabetes.html",username=username)
 
@@ -189,6 +189,15 @@ def signup():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+#===============================profile=========================
+@app.route("/profile" ,methods=["GET" ,"POST"])
+@login_required
+def profile():
+    user = User.query.filter_by(username=current_user.username).first()
+    username = user.username if user else None
+    email = user.email if user else None
+    return render_template("profile.html" ,username=username ,email=email)
 
 
 if __name__ == "__main__":

@@ -29,7 +29,7 @@
               </li>
             </ul>
             <ul class="pt-3">
-                <a  href="#"><button class="log-btn">{{ username }}</button></a>
+                <a  href="{{url_for('profile')}}"><button class="log-btn">{{ username }}</button></a>
                 <a  href="{{url_for('logout')}}" class="reg-btn text-light">Logout</a>
             </ul>
             {% else %}
