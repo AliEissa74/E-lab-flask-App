@@ -166,6 +166,10 @@ margin: 0 26rem;     /*for navbar titles align*/
   box-shadow: var(--box-shadow);
   color: var(--green);
   margin-bottom: .2rem;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .navbar .log-btn:hover {
   opacity: .7;
