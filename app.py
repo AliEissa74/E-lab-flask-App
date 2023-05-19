@@ -53,8 +53,11 @@ def login_required(f):
 #=================================home page========================
 @app.route("/")
 def home():
-    user = User.query.filter_by(username=current_user.username).first()
-    username = user.username if user else None
+    user = None
+    username = None
+    if current_user.is_authenticated:
+        user = User.query.filter_by(username=current_user.username).first()
+        username = user.username if user else None
     return render_template("index.html" ,user=current_user ,username=username)
 
 #===================================brain tumor===========================
@@ -152,7 +155,7 @@ def signup():
         try:
             validate_email(email)
         except EmailNotValidError as e:
-            flash(str(e))
+            flash(str(e),"danger")
             return redirect(url_for('signup'))
 
         # Check if email already exists in the database

@@ -62,7 +62,7 @@ label{
 .form-control::placeholder {
   color: rgb(85, 85, 85);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .btn{
@@ -73,3 +73,34 @@ label{
   height: 35px;
   margin-right: 20px;
 }
+
+
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 300px;
+    height: 350px;
+  }
+  .row{
+    display: inline-block;
+    width: 100%;
+  }
+  .input-field{
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 20px;
+  }
+  label{
+    font-size: 14px;
+  }
+  
+  
+}
+
+    /* Media query for screen sizes between 601px and 900px */
+    @media screen and (min-width: 601px) and (max-width: 900px) {
+      form {
+        width: 550px;
+        height: 350px;
+      }
+    }
