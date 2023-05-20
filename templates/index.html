@@ -15,8 +15,8 @@
     <!-- bootstrap link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
-    <!-- animate lib -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS animate lib -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- css file link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -30,7 +30,7 @@
     <!--================================  home section start ================================ -->
 
     <section class="home" id="home">
-      <div class="content">
+      <div class="content" data-aos="fade-right">
         <h3>excellent medical<br> specialty <span>healthcare</span></h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -41,7 +41,7 @@
       </div>
 
       <div class="image">
-        <img src="../static/image/home2.gif" alt="" />
+        <img src="../static/image/home2.gif" alt="" data-aos="fade-up"/>
       </div>
     </section>
 
@@ -49,7 +49,7 @@
 
     <!--================================ services section start ================================ -->
 
-    <section class="services" id="services">
+    <section class="services" id="services" data-aos="fade-up">
       <h1 class="top-heading">our <span>services</span></h1>
       <h1 class="heading">easy steps</h1>
 
@@ -140,10 +140,10 @@
 
     <!--================================ diagnose section start ================================-->
     <section class="diagnose" id="diagnose">
-      <h1 class="top-heading">Diagnose</span></h1>
-      <h1 class="heading">check you health</h1>
+      <h1 class="top-heading" data-aos="flip-up">Diagnose</span></h1>
+      <h1 class="heading" data-aos="flip-up">check you health</h1>
 
-      <div class="box-container">
+      <div class="box-container" data-aos="fade-up">
         <div class="box">
           <img src="../static/image/brain.png"/>
           <!-- <i class="fas fa-diagnoses"></i> -->
@@ -216,7 +216,7 @@
     
           <div class="box-container">
 
-            <div class="card">
+            <div class="card" data-aos="fade-right">
               <img src="../static/image/doc-4.jpg" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
                 <h3 class="card-title">Dr. Ahmed Alaa</h3>
@@ -229,7 +229,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card" data-aos="fade-right">
               <img src="../static/image/doc-2.jpg" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
                 <h3 class="card-title">Dr. Mariam</h3>
@@ -242,7 +242,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card" data-aos="fade-left">
               <img src="../static/image/doc-3.jpg" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
                 <h3 class="card-title">Dr. Daniel</h3>
@@ -255,7 +255,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card" data-aos="fade-left">
               <img src="../static/image/doc-3.jpg" class="card-img-top img-fluid" alt="...">
               <div class="card-body">
                 <h3 class="card-title">Dr. lee</h3>
@@ -272,33 +272,6 @@
         </section>
     
     <!--================================ doctors section end ================================-->
-
-    <!--================================ app section start ================================-->
-
-    <!-- <section class="app" id="app"> -->
-      <!-- <div class="container">
-        <div class="row">
-        <div class="content col-12 col-md" style="border: red 1px solid;">
-          <h1>App details</h1>
-        </div>
-        <div class="img col col-md" style="border: red 1px solid;"> -->
-          <!-- replace h1 with app image -->
-        <!-- <h1>App Image</h1>
-        </div>
-      </div>
-      </div> -->
-
-      <!-- <div class="box-container">
-        <div class="box content">
-            <h1>app details</h1>
-        </div>
-          <div class="box img">
-              <h1>img</h1>
-          </div>
-      </div> -->
-    <!-- </section> -->
-
-    <!--================================ app section end ================================-->
 
     <!--================================ Review section start ================================-->
     <section class="reviews" id="reviews">
@@ -460,58 +433,18 @@
     </section>
     <!--================================ Review section end ================================-->
 
-        <!--================================ Article section start ================================-->
-        <!-- <section class="articles" id="articles">
-          <h1 class="top-heading">read our blog</h1>
-          <h1 class="heading">Latest trending articles</h1>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card mb-4">
-                  <img src="../static/image/blog-2.jpg" class="card-img-top img-fluid" alt="Blog Post" />
-                  <div class="card-body">
-                    <span class="text-black-50">Jan 17, 2022</span>
-                    <h5 class="card-title"><a href="#">Some Awesome Blog Title Here</a></h5>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="card mb-4">
-                  <img src="../static/image/blog-2.jpg" class="card-img-top img-fluid" alt="Blog Post" />
-                  <div class="card-body">
-                    <span class="text-black-50">Jan 17, 2022</span>
-                    <h5 class="card-title"><a href="#">Some Awesome Blog Title Here</a></h5>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="card mb-4">
-                  <img src="../static/image/blog-2.jpg" class="card-img-top img-fluid" alt="Blog Post" />
-                  <div class="card-body">
-                    <span class="text-black-50">Jan 17, 2022</span>
-                    <h5 class="card-title"><a href="#">Some Awesome Blog Title Here</a></h5>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-          </section> -->
-        
+        <!--================================ Blog section start ================================-->
           <section id="blog" class="blog">
             <div class="container">
               <div class="row">
                 <div class="col-lg-4 offset-lg-4 ">
                   <div class="section-heading">
-                    <h1 class="top-heading">Recent News</h1>
-                    <h1 class="heading">check our blog posts</h1>
+                    <h1 class="top-heading" data-aos="flip-up">Recent News</h1>
+                    <h1 class="heading" data-aos="flip-up">check our blog posts</h1>
                     <div class="line-dec"></div>
                   </div>
                 </div>
-                <div class="col-lg-6 ">
+                <div class="col-lg-6" data-aos="fade-right">
                   <div class="blog-post">
                     <div class="thumb">
                       <a href="#"><img src="static/image/blog-post-01.jpg" alt=""></a>
@@ -529,7 +462,7 @@
                 </div>
                 <div class="col-lg-6" >
                   <div class="blog-posts">
-                    <div class="row">
+                    <div class="row" data-aos="fade-left">
                       <div class="col-lg-12">
                         <div class="post-item">
                           <div class="thumb">
@@ -575,7 +508,7 @@
               </div>
             </div>
           </section>
-          <!--================================ Article section end ================================-->
+          <!--================================ Blog section end ================================-->
         <!--================================ footer section starts ================================-->
 
           {% include "footer.html" %}
@@ -587,6 +520,9 @@
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+    <!-- aos js file link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- custom js file link -->
     <script src="../static/js/script.js"></script>
   </body>
 </html>

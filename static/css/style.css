@@ -267,11 +267,9 @@ margin: 0 26rem;     /*for navbar titles align*/
 }
 
 /*============================ services section start ============================*/
-.services {
-  /* background-color: var(--section-color); */
-  animation: fadeInDown;
-  animation-duration: 2s;
-}
+/* .services {
+  background-color: var(--section-color);
+} */
 
 .services .box-container {
   display: grid;
