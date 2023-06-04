@@ -65,9 +65,8 @@
 
   <div>
 
-    <div class="result" id="result" style="visibility: hidden;">
-      <h2> Result: 
-      </h2>
+    <div class="predict" id="result" style="visibility: hidden;">
+      <div class="loader"></div>
     </div>
 
   </div>
@@ -104,18 +103,19 @@
         alert("Please choose a photo");
         location.reload();
       }
+      document.getElementById('result').style.visibility = "visible";
       try {
         const formData = new FormData();
         formData.append('file', userFile.files[0]);
         
         //post request
-        const response = await fetch('https://elect-lab-production.up.railway.app/chest_predict', {
+        const response = await fetch('https://e-lab.up.railway.app/chest_predict', {
           method: 'POST',
           body: formData,
           key: 'file',
         })
         const result = await response.json();
-        const resultResponse = await fetch(`https://elect-lab-production.up.railway.app/ResXray?file=${result.result}`)
+        const resultResponse = await fetch(`https://e-lab.up.railway.app/ResXray?file=${result.result}`)
         const data = await resultResponse.json();
         // console.log(data)
           document.getElementById('result').innerHTML =`
@@ -125,7 +125,9 @@
           </div>`;
 
       } catch (error) {
-        console.error(error);
+        // console.error(error);
+        alert("Something went wrong, please try again");
+        location.reload();
       }
       });
   </script>

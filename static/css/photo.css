@@ -154,8 +154,7 @@ color: #fff;
   object-fit: cover;
 }
 
-.result{
-  width: 90%;
+.predict{
   height: 80px;
   border:var(--border);
   border-radius: .5rem;
@@ -201,6 +200,29 @@ label{
   background: #fff;
   margin-left: 1rem;
 }
+
+/* result animation */
+
+.loader:before {
+  content: '';
+  display: block;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: spin .5s infinite linear;
+          animation: spin .5s infinite linear;
+  border: 6px var(--green) solid;
+  border-left-color: #fff;
+  border-radius: 100%; }
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 
 

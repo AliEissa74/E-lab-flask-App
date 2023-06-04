@@ -372,7 +372,7 @@ margin: 0 26rem;     /*for navbar titles align*/
 
 .diagnose .box-container {
   display: grid;
-  gap: 1.5rem;
+  gap: 2.5rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 

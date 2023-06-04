@@ -76,14 +76,6 @@ def chest():
     username = user.username if user else None
     return render_template("diagnoses/xray.html",username=username)
 
-#===============================Breast cancer=========================
-@app.route("/breast-cancer")
-@login_required
-def breast():
-    user = User.query.filter_by(username=current_user.username).first()
-    username = user.username if user else None
-    return render_template("diagnoses/breast.html",username=username)
-
 #===============================Skin cancer=========================
 @app.route("/skin-cancer")
 @login_required
