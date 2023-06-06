@@ -23,7 +23,7 @@ body{
 
 form{
   width: 450px;
-  height: 500px;
+  height: 450px;
   margin: 16rem auto;
   border: 1px solid #fff;
   border-radius: 15px;
@@ -34,7 +34,7 @@ form{
 }
 h1{
   margin-bottom: 40px;
-  margin-top: 50px;
+  margin-top: 15px;
   text-align: center;
   font-size: 30px;
   font-weight: 700;
@@ -104,7 +104,7 @@ h1{
   border: 2px solid var(--green);
   color: var(--green);
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 25px 0 10px 0;
   cursor: pointer;
 }
 .btn:hover{
@@ -133,10 +133,34 @@ p a:hover{
 
 /* =============================sign up============================== */
 .signup{
-  width: 500px;
-  height: 600px;
+  width: 550px;
+  height: 650px;
   /* margin: 13rem auto; */
 }
+.signup .row{
+  margin: 10px auto;
+  text-align: center;
+}
+
+.signup .form-group label{
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom:5px;
+  display: block;
+  color: var(--black);
+}
+
+
+/* .signup .gender{
+margin: 10px auto;
+}
+.gender .form-check{
+  margin: 0 15px;
+}
+
+.gender input,.form-check-label{
+  font-size: 14px;
+} */
 
 .alert {
   position: fixed;
@@ -147,6 +171,23 @@ p a:hover{
   width: 35%;
   font-size: 16px;
   text-align: center;
+}
+.signup select {
+  font-size: 14px;
+  /* margin-top: 1.5rem; */
+  margin-left: .5rem;
+  padding: .9rem 0;
+  border-radius: .3rem ;
+  border: 1px solid #ccc;
+  background:#fff;
+  width: 60%;
+  border: var(--border);
+}
+.field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
 }
 
 /* media queries */
@@ -168,10 +209,14 @@ p a:hover{
 
 @media screen and (max-width: 600px) {
   form {
-    width: 300px;
+    width: 330px;
   }
   .signup{
     width: 350px;
+    height: 700px;
+  }
+  .signup .form-group{
+    margin-top: 10px;
   }
   .alert {
     position: fixed;
@@ -182,6 +227,13 @@ p a:hover{
     width: 70%;
     font-size: 16px;
     text-align: center;
+  }
+  .signup .form-group label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: inline;
+    color: var(--black);
   }
 }
 

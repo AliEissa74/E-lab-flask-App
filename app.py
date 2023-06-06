@@ -32,7 +32,9 @@ class User(db.Model,UserMixin):
     id =db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(30),nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
-    password=db.Column(db.String(30),nullable=False) 
+    password=db.Column(db.String(30),nullable=False)
+    gender =db.Column(db.String(10),nullable=False)
+    blood_type =db.Column(db.String(5),nullable=False)
 
 
 with app.app_context():
@@ -57,8 +59,8 @@ def home():
     username = None
     if current_user.is_authenticated:
         user = User.query.filter_by(username=current_user.username).first()
-        username = user.username if user else None
-    return render_template("index.html" ,user=current_user ,username=username)
+        # username = user.username if user else None
+    return render_template("index.html" ,user=current_user)
 
 #===================================brain tumor===========================
 @app.route("/brain-tumor")
@@ -136,6 +138,8 @@ def signup():
         email = request.form['email']
         password = request.form['password1']
         confirm_password = request.form['password2']
+        gender = request.form['gender']
+        blood_type = request.form['blood_type']
 
         # check if username already exists in the database
         # existing_user = User.query.filter_by(username=username).first()
@@ -169,7 +173,7 @@ def signup():
         
         # create new user
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-        new_user = User(username=username, email=email, password=hashed_password)
+        new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type)
         db.session.add(new_user)
         db.session.commit()
 
@@ -192,7 +196,9 @@ def profile():
     user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
     email = user.email if user else None
-    return render_template("profile.html" ,username=username ,email=email)
+    gender = user.gender if user else None
+    blood_type = user.blood_type if user else None
+    return render_template("profile.html" ,username=username ,email=email,gender=gender , blood_type=blood_type)
 
 
 if __name__ == "__main__":
