@@ -243,7 +243,7 @@ form .row{
 @media (max-width:450px){
 
   html{
-    font-size: 40%;
+    font-size: 50%;
   }
 
   .formbox .row .image{
@@ -256,6 +256,9 @@ form .row{
     width: 70%;
     justify-content: center;
     margin: 0 auto;
+  }
+  .gender select{
+    font-size: 12px;
   }
 
 }

@@ -23,8 +23,8 @@ body{
 }
 
 form{
-  width: 40%;
-  height: 350px;
+  width: 45%;
+  height: 400px;
   margin: 16rem auto;
   border: 1px solid #fff;
   border-radius: 15px;
@@ -79,7 +79,7 @@ label{
 @media screen and (max-width: 600px) {
   form {
     width: 300px;
-    height: 350px;
+    height: 500px;
   }
   .row{
     display: inline-block;
@@ -100,7 +100,7 @@ label{
     /* Media query for screen sizes between 601px and 900px */
     @media screen and (min-width: 601px) and (max-width: 900px) {
       form {
-        width: 550px;
+        width: 600px;
         height: 350px;
       }
     }

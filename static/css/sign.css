@@ -210,6 +210,7 @@ margin: 10px auto;
 @media screen and (max-width: 600px) {
   form {
     width: 330px;
+    margin: 13rem auto;
   }
   .signup{
     width: 350px;
@@ -229,11 +230,17 @@ margin: 10px auto;
     text-align: center;
   }
   .signup .form-group label{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin-bottom: 10px;
     display: inline;
     color: var(--black);
+  }
+  .signup .form-group option{
+    font-size: 14px;
+  }
+  .gender{
+    margin-left: 12px;
+    margin-bottom: 8px;
   }
 }
 
