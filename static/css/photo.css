@@ -254,9 +254,6 @@ label{
 
 @media (max-width:768px){
 
-  #menu-btn{
-    display: initial;
-  }
 
   .header .navbar{
     position: absolute;

@@ -230,15 +230,31 @@ form .row{
   section{
     padding: 0 5%;
   }
+  .heading{
+    margin-top: 60px;
+  }
+  .row .image img{
+    display: none;
+  }
+  form{
+    width: 80%;
+    margin-left: 70px;
+  }
 }
 
 @media (max-width:768px){
   .row .image img{
     display: none;
   }
-
-
+  .heading{
+    margin-top: 60px;
+  }
+  form{
+    width: 100%;
+    margin: 0;
+  }
 }
+
 
 @media (max-width:450px){
 
@@ -261,4 +277,7 @@ form .row{
     font-size: 12px;
   }
 
+  .heading{
+    margin-top: 60px;
+  }
 }

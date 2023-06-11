@@ -23,8 +23,8 @@ body{
 
 form{
   width: 450px;
-  height: 450px;
-  margin: 16rem auto;
+  height: 400px;
+  margin: 13.5rem auto;
   border: 1px solid #fff;
   border-radius: 15px;
   padding: 10px;
@@ -33,7 +33,7 @@ form{
   
 }
 h1{
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   margin-top: 15px;
   text-align: center;
   font-size: 30px;
@@ -45,7 +45,7 @@ h1{
   max-width: 380px;
   width: 100%;
   background-color: #f0f0f0;
-  margin: 20px auto;
+  margin: 18px auto;
   height: 55px;
   border-radius: 10px;
   display: grid;
@@ -56,7 +56,7 @@ h1{
 .input-field i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: var(--green);
   font-size: 1.8rem;
 }
 .input-field input {
@@ -94,9 +94,9 @@ h1{
   text-align: center;
 }
 .btn{
-  width: 50%;
-  height: 50px;
-  padding: 10px 25px;
+  width: 45%;
+  height: 45px;
+  padding: 9px 0;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -104,7 +104,7 @@ h1{
   border: 2px solid var(--green);
   color: var(--green);
   border-radius: 10px;
-  margin: 25px 0 10px 0;
+  margin: 20px 0 15px 0;
   cursor: pointer;
 }
 .btn:hover{
@@ -117,13 +117,14 @@ p{
   font-size: 16px;
   font-weight: 600;
   text-transform: initial;
+  color: #6f6e6e;
 }
 
-p a{
+p >a{
   text-decoration: none;
   color: var(--green);
   margin-left: 10px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 p a:hover{
@@ -134,7 +135,7 @@ p a:hover{
 /* =============================sign up============================== */
 .signup{
   width: 550px;
-  height: 650px;
+  height: 680px;
   /* margin: 13rem auto; */
 }
 .signup .row{
@@ -148,6 +149,16 @@ p a:hover{
   margin-bottom:5px;
   display: block;
   color: var(--black);
+}
+.signup #date{
+  width: 90%;
+  /* margin-left: .5rem; */
+  padding: 1rem .6rem;
+  font-size: 13px;
+  border-radius: .3rem ;
+  border: 1px solid #ccc;
+  /* background:#dadada; */
+  border: var(--border);
 }
 
 
@@ -164,13 +175,13 @@ margin: 10px auto;
 
 .alert {
   position: fixed;
-  top: 80px;
+  top: 75px;
   z-index: 11;
   left: 50%;
   transform: translateX(-50%);
-  width: 35%;
-  font-size: 16px;
-  text-align: center;
+  width: fit-content;
+  font-size: 15px;
+  /* text-align: center; */
 }
 .signup select {
   font-size: 14px;
@@ -179,16 +190,17 @@ margin: 10px auto;
   padding: .9rem 0;
   border-radius: .3rem ;
   border: 1px solid #ccc;
-  background:#fff;
-  width: 60%;
+  /* background:#fff; */
+  width: 50%;
+  text-align: center;
   border: var(--border);
 }
-.field{
+/* .field{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-}
+} */
 
 /* media queries */
 
@@ -209,13 +221,17 @@ margin: 10px auto;
 
 @media screen and (max-width: 600px) {
   form {
-    width: 330px;
-    margin: 13rem auto;
+    width: 350px;
+    /* margin: 13rem auto; */
   }
   .signup{
     width: 350px;
-    height: 700px;
+    height: 730px;
   }
+  .input-field{
+    margin: 10px auto;
+  }
+
   .signup .form-group{
     margin-top: 10px;
   }
@@ -225,8 +241,8 @@ margin: 10px auto;
     z-index: 11;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
-    font-size: 16px;
+    width: 80%;
+    font-size: 14px;
     text-align: center;
   }
   .signup .form-group label{
@@ -235,12 +251,24 @@ margin: 10px auto;
     display: inline;
     color: var(--black);
   }
+  .signup select {
+    width: 90%;
+  }
   .signup .form-group option{
     font-size: 14px;
   }
   .gender{
     margin-left: 12px;
     margin-bottom: 8px;
+  }
+  .btn{
+    width: 80%;
+  }
+  .blood{
+    margin-left: 25px;
+  }
+  .signup #date{
+    width: 90%;
   }
 }
 

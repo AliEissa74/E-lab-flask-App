@@ -58,10 +58,10 @@
       <input type="password" name="password2" id="password2" class="inputs" placeholder="Confirm Password" required>
       </div>
     <div class="row">
-        <div class="form-group col-md-6 gender">
+        <div class="form-group col-5 col-md-6 gender">
           <label for="gender">Gender: </label>
           <select id="gender" name="gender" required>
-            <option value="" disabled selected>Select Gender</option>
+            <option value="" disabled selected> -Select- </option>
             <option value="Male" >Male</option>
             <option value="Female">Female</option>
           </select>
@@ -77,10 +77,10 @@
           </div> -->
         </div>
 
-        <div class="form-group col-md-6 blood">
+        <div class="form-group col-5 col-md-6 blood">
           <label for="blood_type">Blood Type: </label>
           <select id="blood_type" name="blood_type" required>
-            <option value="" disabled selected>Select Blood Type</option>
+            <option value="" disabled selected> -Select- </option>
             <option value="A+" >A+</option>
             <option value="A-">A-</option>
             <option value="B+">B+</option>
@@ -93,10 +93,23 @@
         </div>
     </div>
 
+    <div class="row">
+      <div class="form-group col-3 col-md-4 ">
+      </div>
+
+      <div class="form-group col-6 col-md-4">
+        <label for="date">Date Of Birth: </label>
+        <input type="date" id="date">
+      </div>
+
+      <div class="form-group col-3 col-md-4 ">
+      </div>
+    </div>
+
       <div class="submit">
       <button type="submit" class="btn">Sign Up </button>
       </div>
-      <p>Already Have An Account? <br> <a href="{{url_for('login')}}">sign in</a></p>
+      <p>Already have an account?<a href="{{url_for('login')}}">sign in</a></p>
   </form>
 
       <!--================================ footer section starts ================================-->
