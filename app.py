@@ -177,10 +177,15 @@ def signup():
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type, birth_date=birth_date)
         db.session.add(new_user)
-        db.session.commit()
+        try:
+            db.session.commit()
+            flash("Your account has been created successfully!","success")
+            return redirect(url_for('login'))
+        except Exception as e:
+            db.session.rollback()
+            flash("An error occurred during account creation. Please try again.", "danger")
+            return redirect(url_for('signup'))
 
-        flash("Your account has been created successfully!","success")
-        return redirect(url_for('login'))
 
     return render_template("signup.html" ,user=current_user)
 

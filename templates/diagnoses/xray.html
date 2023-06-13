@@ -109,13 +109,13 @@
         formData.append('file', userFile.files[0]);
         
         //post request
-        const response = await fetch('https://e-lab.up.railway.app/chest_predict', {
+        const response = await fetch('http://elect-lab-production.up.railway.app/chest_predict', {
           method: 'POST',
           body: formData,
           key: 'file',
         })
         const result = await response.json();
-        const resultResponse = await fetch(`https://e-lab.up.railway.app/ResXray?file=${result.result}`)
+        const resultResponse = await fetch(`http://elect-lab-production.up.railway.app/ResXray?file=${result.result}`)
         const data = await resultResponse.json();
         // console.log(data)
           document.getElementById('result').innerHTML =`
