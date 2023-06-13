@@ -150,7 +150,7 @@ p a:hover{
   display: block;
   color: var(--black);
 }
-.signup #date{
+.signup #birth_date{
   width: 90%;
   /* margin-left: .5rem; */
   padding: 1rem .6rem;
@@ -267,7 +267,7 @@ margin: 10px auto;
   .blood{
     margin-left: 25px;
   }
-  .signup #date{
+  .signup #birth_date{
     width: 90%;
   }
 }

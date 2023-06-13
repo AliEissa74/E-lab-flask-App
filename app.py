@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template , request , flash
+from flask import Flask, redirect, url_for, render_template , request , flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin,login_user,LoginManager,login_required ,current_user,logout_user
 from email_validator import validate_email, EmailNotValidError
@@ -35,6 +35,7 @@ class User(db.Model,UserMixin):
     password=db.Column(db.String(30),nullable=False)
     gender =db.Column(db.String(10),nullable=False)
     blood_type =db.Column(db.String(5),nullable=False)
+    birth_date = db.Column(db.String(40), nullable=True)
 
 
 with app.app_context():
@@ -140,6 +141,7 @@ def signup():
         confirm_password = request.form['password2']
         gender = request.form['gender']
         blood_type = request.form['blood_type']
+        birth_date = request.form['birth_date']
 
         # check if username already exists in the database
         # existing_user = User.query.filter_by(username=username).first()
@@ -173,7 +175,7 @@ def signup():
         
         # create new user
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-        new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type)
+        new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type, birth_date=birth_date)
         db.session.add(new_user)
         db.session.commit()
 
@@ -198,7 +200,7 @@ def profile():
     email = user.email if user else None
     gender = user.gender if user else None
     blood_type = user.blood_type if user else None
-    return render_template("profile.html" ,username=username ,email=email,gender=gender , blood_type=blood_type)
+    return render_template("profile.html" ,username=username ,email=email,gender=gender , blood_type=blood_type ,birth_date=user.birth_date ,user=current_user)
 
 
 if __name__ == "__main__":
