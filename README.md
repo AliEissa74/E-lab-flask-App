@@ -1,4 +1,4 @@
-# E-lab-flask-App
+# E-lab
 ## Artificial intelligence application for early cancer detection
 
 ### app run on http://127.0.0.1:4000/
