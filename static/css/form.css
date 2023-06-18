@@ -184,6 +184,10 @@ form .row{
 .formbox  form .custom-btn{
   padding: 1rem 3rem;
 } 
+.formbox  form #start{
+  margin-right: 5em;
+  margin-top: 2rem;
+}
 
 .predict{
   height: 80px;

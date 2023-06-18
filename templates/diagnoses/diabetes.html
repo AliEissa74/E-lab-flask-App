@@ -51,9 +51,9 @@
               <div class="gender">
                 <label for="gender">Gender</label>
                   <select id="gender" name="Gender" >
-                    <option value="" disabled selected>*Please Select*</option>
-                    <option value=1 name="Gender">male</option>
-                    <option value=0 name="Gender">female</option>
+                    <!-- <option value="" disabled selected>*Please Select*</option> -->
+                    <option value=1 name="Gender" {% if gender == 'Male' %}selected{% endif %}>Male</option>
+                    <option value=0 name="Gender" {% if gender == 'Female' %}selected{% endif %}>Female</option>
 
                   </select>
               </div>
@@ -93,7 +93,10 @@
       
               <!-- <h4>Any comments, questions or suggestions?</h4>
               <textarea rows="3" id="inp_comment"></textarea> -->
-              <button type="submit" class="custom-btn" value='pred'>start</button>
+              <div class="button-row">
+                <button type="submit" class="custom-btn" id="start" value='pred'>start</button>
+                <button type="button" id="btn-reset" class="custom-btn">Reset</button>
+              </div>
 
             </form>
           </div>
@@ -132,6 +135,10 @@ const form = document.getElementById('form');
 // const polyuria = document.getElementsByName('polyuria').value;
 // const weightLoss = document.getElementsByName('weight-loss').value;
 // const alopecia = document.getElementsByName('alopecia').value;
+
+document.getElementById("btn-reset").addEventListener("click", function() {
+      location.reload(); // Reload the page
+    });
 
 
 form.addEventListener('submit', async (e) => {

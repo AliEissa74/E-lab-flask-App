@@ -57,7 +57,10 @@
             <input type="file" id="file" class="browse" hidden name="image" accept="image/png, image/jpg, image/jpeg">
             <span class="support">Supports: PNG, JPG, JPEG</span>
           </div>
-          <button type="submit" id="btn-submit" class="custom-btn">start</button>
+          <div class="button-row">
+            <button type="submit" id="btn-submit" class="custom-btn">start</button>
+            <button type="button" id="btn-reset" class="custom-btn">Reset</button>
+          </div>
             <!-- <input type="file" class="form-control"  name="image" value="Choose Photo" id="photo" accept="image/png, image/jpg, image/jpeg">
             <label for="photo" class="upload" >
               <i class="fa-solid fa-upload"></i>&nbsp;
@@ -122,9 +125,13 @@
     const form = document.getElementById('form')
     const userFile = document.getElementById('file');
 
+    document.getElementById("btn-reset").addEventListener("click", function() {
+      location.reload(); // Reload the page
+    });
+
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      // check if user choose a photo
+      // check if user doesn't choose a photo
       if (!userFile.files[0]){
         alert("Please choose a photo");
         location.reload();

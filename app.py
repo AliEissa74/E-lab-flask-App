@@ -33,8 +33,9 @@ class User(db.Model,UserMixin):
     username=db.Column(db.String(30),nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
     password=db.Column(db.String(30),nullable=False)
+    phone_number = db.Column(db.String(40), nullable=False)
     gender =db.Column(db.String(10),nullable=False)
-    blood_type =db.Column(db.String(5),nullable=False)
+    blood_type =db.Column(db.String(5),nullable=True)
     birth_date = db.Column(db.String(40), nullable=True)
 
 
@@ -62,6 +63,11 @@ def home():
         user = User.query.filter_by(username=current_user.username).first()
         # username = user.username if user else None
     return render_template("index.html" ,user=current_user)
+
+#=================================error page========================
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 #===================================brain tumor===========================
 @app.route("/brain-tumor")
@@ -93,7 +99,8 @@ def skin():
 def diabete():
     user = User.query.filter_by(username=current_user.username).first()
     username = user.username if user else None
-    return render_template("diagnoses/diabetes.html",username=username)
+    gender = user.gender if user else None
+    return render_template("diagnoses/diabetes.html",username=username ,gender=gender)
 
 
 
@@ -138,10 +145,10 @@ def signup():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password1']
-        confirm_password = request.form['password2']
         gender = request.form['gender']
         blood_type = request.form['blood_type']
         birth_date = request.form['birth_date']
+        phone_number = request.form['phone_number']
 
         # check if username already exists in the database
         # existing_user = User.query.filter_by(username=username).first()
@@ -164,9 +171,9 @@ def signup():
 
 
         # check if password and confirm password match
-        if password != confirm_password:
-            flash("Password and confirm password do not match." ,"danger")
-            return redirect(url_for('signup'))
+        # if password != confirm_password:
+        #     flash("Password and confirm password do not match." ,"danger")
+        #     return redirect(url_for('signup'))
 
         # check if password less than 7 characters
         if len(password) < 8:
@@ -175,7 +182,7 @@ def signup():
         
         # create new user
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-        new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type, birth_date=birth_date)
+        new_user = User(username=username, email=email, password=hashed_password ,gender=gender, blood_type=blood_type , birth_date=birth_date ,phone_number=phone_number)
         db.session.add(new_user)
         try:
             db.session.commit()
@@ -205,8 +212,10 @@ def profile():
     email = user.email if user else None
     gender = user.gender if user else None
     blood_type = user.blood_type if user else None
-    return render_template("profile.html" ,username=username ,email=email,gender=gender , blood_type=blood_type ,birth_date=user.birth_date ,user=current_user)
+    phone_number = user.phone_number if user else None
+    return render_template("profile.html" ,username=username ,email=email,gender=gender , blood_type=blood_type ,birth_date=user.birth_date ,phone_number=phone_number ,user=current_user)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # do not set debug=True in production
+    app.run(host="0.0.0.0", port=4000, debug=True)
