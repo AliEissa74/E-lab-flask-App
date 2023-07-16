@@ -16,7 +16,7 @@ https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/9071fdf9-3654-4b90
 **Diagnose:**
 ![brain](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/d9855d0e-8c5b-465f-a1a5-a39d504a6513)
 ![brain-result](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/18a14bed-73d1-4b2f-8233-0db52f3b916f)
-
+______________
 ![diabetes](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/cc53c210-c5d4-443e-b8fa-3e1fdcd3c4ba)
 ![diabetes-result-Crop](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/2c14dc7b-2f33-402b-b967-c6b42c0f7c15)
 
