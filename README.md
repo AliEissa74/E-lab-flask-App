@@ -25,6 +25,8 @@ https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/1f24ca8d-3ffa-4620
 ___________________________________________________
 ## Responsive-Design
 **Mobile:**
+
+
 ![diagnoses-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/c33c1800-803a-4478-b495-e8f8cccab352)
 ![brain-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/3bb5fffa-3e66-45b0-9fa8-1cd42726600a)
 
