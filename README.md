@@ -9,8 +9,14 @@ ___________________________________________________
 ![home page ](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/8d8cdc3e-1d23-4e95-913e-66f380941f75)
 
 **Homepage-video:**
-https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/47d0fa59-83aa-4c92-9a7c-1dcf39f6bbe9
 
+
+https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/77e4b9bd-90bf-4359-a919-b6e5917b8c2f
+
+
+
+
+___________________________________________________
 **Diagnose:**
 ![brain](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/aa3ff09f-dadd-439d-963c-8c6dfa2b45e4)
 ![brain-result](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/513d8b6d-5d44-47d7-9a85-65e8116ea4de)
@@ -23,8 +29,9 @@ ___________________________________________________
 **Mobile:**
 
 
-![diagnoses-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/c33c1800-803a-4478-b495-e8f8cccab352)
-![brain-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/3bb5fffa-3e66-45b0-9fa8-1cd42726600a)
+![diagnoses-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/e0baf1b1-951e-4fac-be50-058dc1cdf528) $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$
+![brain-mobile](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/0b9c2fd0-27a3-40d0-bec7-1000f88e02a9)
+
 
 **Tablet:**
 
