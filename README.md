@@ -4,15 +4,12 @@ ___________________________________________________
 ## Context
 application to check on your health and identify diseases and recommend to you the best doctors near to the area in which you are located, you can book with the doctor you want, as there is in this application that reads the medical analyzes and informs you of the disease that is found in medical analyzes.
 ___________________________________________________
-### app run on http://127.0.0.1:4000/
-### can run as a docker image in http://127.0.0.1:4000/
-___________________________________________________
 ## Website 
 **Homepage:**
 ![home page ](https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/8d8cdc3e-1d23-4e95-913e-66f380941f75)
 
 **Homepage-video:**
-https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/1f24ca8d-3ffa-4620-959a-454c30a722ee
+https://github.com/AliEissa74/E-lab-flask-App/assets/70850717/cc1d1bf4-cb71-4d93-a696-159151c85c66
 
 
 **Diagnose:**
